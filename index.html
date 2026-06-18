@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jewellery Price Check</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- =========================
+         PAGE 1 - WELCOME SCREEN
+    ========================== -->
+
+    <section id="welcomePage" class="welcome-page">
+
+        <header class="top-header">
+
+            <div class="logo-container">
+                <img src="logo.png"
+                    alt="Logo"
+                        class="logo">
+            </div>
+
+        </header>
+
+        <div class="welcome-overlay">
+
+            <div class="welcome-content">
+
+                <h1>
+                    Jewellery Price Check
+                </h1>
+
+                <p>
+                    Verify Jewellery Prices Instantly.
+                    Calculate, Compare and Purchase with Confidence.
+                </p>
+
+                <button id="startBtn" class="start-btn">
+                    Get Started
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         PAGE 2 - CALCULATOR PAGE
+    ========================== -->
+
+    <section id="calculatorPage" class="calculator-page hidden">
+
+        <header class="calculator-header">
+
+            <div class="logo-section">
+                <img src="logo.png"
+                    alt="Logo"
+                        class="logo">
+            </div>
+
+            <h1>
+                Jewellery Price Calculator
+            </h1>
+
+        </header>
+
+        <div class="calculator-container">
+
+            <form id="calculatorForm">
+
+                <!-- =========================
+                     JEWELLERY TYPE
+                ========================== -->
+
+                <div class="card">
+
+                    <h2>Jewellery Type *</h2>
+
+                    <div class="checkbox-grid">
+
+                        <label>
+                            <input type="checkbox"
+                                class="jewelleryType"
+                                value="Gold">
+                            Gold
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                class="jewelleryType"
+                                value="Silver">
+                            Silver
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                class="jewelleryType"
+                                value="Gift Articles">
+                            Gift Articles
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                class="jewelleryType"
+                                value="Diamond">
+                            Diamond
+                        </label>
+
+                        <label>
+                            <input type="checkbox"
+                                class="jewelleryType"
+                                value="Platinum">
+                            Platinum
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- =========================
+                     RATE SECTION
+                ========================== -->
+
+                <div class="card">
+
+                    <h2>Rate Per Gram *</h2>
+
+                    <div id="rateFields">
+
+                        <div id="goldRateBox" class="rate-box hidden">
+                            <label>Gold Rate (22K / 24K)</label>
+                            <input type="number"
+                                id="goldRate"
+                                min="0"
+                                placeholder="Enter Gold Rate">
+                        </div>
+
+                        <div id="silverRateBox" class="rate-box hidden">
+                            <label>Silver Rate</label>
+                            <input type="number"
+                                id="silverRate"
+                                min="0"
+                                placeholder="Enter Silver Rate">
+                        </div>
+
+                        <div id="giftRateBox" class="rate-box hidden">
+                            <label>Gift Articles Rate</label>
+                            <input type="number"
+                                id="giftRate"
+                                min="0"
+                                placeholder="Enter Gift Articles Rate">
+                        </div>
+
+                        <div id="diamondRateBox" class="rate-box hidden">
+                            <label>Diamond Rate</label>
+                            <input type="number"
+                                id="diamondRate"
+                                min="0"
+                                placeholder="Enter Diamond Rate">
+                        </div>
+
+                        <div id="platinumRateBox" class="rate-box hidden">
+                            <label>Platinum Rate</label>
+                            <input type="number"
+                                id="platinumRate"
+                                min="0"
+                                placeholder="Enter Platinum Rate">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- =========================
+                     BASIC DETAILS
+                ========================== -->
+
+                <div class="card">
+
+                    <h2>Purchase Details</h2>
+
+                    <div class="input-grid">
+
+                        <div>
+                            <label>Weight (Grams) *</label>
+                            <input type="number"
+                                id="weight"
+                                min="0"
+                                placeholder="Enter Weight">
+                        </div>
+
+                        <div>
+                            <label>Wastage</label>
+                            <input type="number"
+                                id="wastage"
+                                min="0"
+                                placeholder="Enter Wastage">
+                        </div>
+
+                        <div>
+                            <label>Making Charges</label>
+                            <input type="number"
+                                id="makingCharges"
+                                min="0"
+                                placeholder="Enter Making Charges">
+                        </div>
+
+                        <div>
+                            <label>Stone Charges</label>
+                            <input type="number"
+                                id="stoneCharges"
+                                min="0"
+                                placeholder="Enter Stone Charges">
+                        </div>
+
+                        <div>
+                            <label>GST *</label>
+                            <select id="gst">
+                                <option value="">Select GST</option>
+                                <option value="0">0%</option>
+                                <option value="1.5">1.5%</option>
+                                <option value="3">3%</option>
+                                <option value="9">9%</option>
+                                <option value="18">18%</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Scheme (Chit) Amount Deduction</label>
+                            <input type="number"
+                                id="scheme"
+                                min="0"
+                                placeholder="Enter Scheme Amount">
+                        </div>
+
+                        <div>
+                            <label>Discount</label>
+                            <input type="number"
+                                id="discount"
+                                min="0"
+                                placeholder="Enter Discount">
+                        </div>
+
+                        <div>
+                            <label>Any Special Offer</label>
+                            <input type="number"
+                                id="offer"
+                                min="0"
+                                placeholder="Enter Offer Amount">
+                        </div>
+
+                        <div>
+                            <label>Additional Charges</label>
+                            <input type="number"
+                                id="additionalCharges"
+                                min="0"
+                                placeholder="Enter Additional Charges">
+                        </div>
+
+                        <div>
+                            <label>Amount Quoted By Shop (Optional)</label>
+                            <input type="number"
+                                id="shopAmount"
+                                min="0"
+                                placeholder="Enter Shop Amount">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ERROR -->
+
+                <div id="errorBox" class="error-box hidden">
+                    Please fill all mandatory fields.
+                </div>
+
+                <!-- BUTTONS -->
+
+                <div class="button-group">
+
+                    <button type="button"
+                        id="calculateBtn"
+                        class="calculate-btn">
+
+                        Calculate & Verify
+
+                    </button>
+
+                    <button type="button"
+                        id="pdfBtn"
+                        class="pdf-btn hidden">
+
+                        Print PDF
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- =========================
+                 RESULT SECTION
+            ========================== -->
+
+            <div id="resultSection"
+                class="result-section hidden">
+
+                <h2>
+                    Calculation Result
+                </h2>
+
+                <div id="calculationBreakdown"></div>
+
+                <div id="verificationResult"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

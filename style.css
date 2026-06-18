@@ -1,0 +1,541 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    overflow-x:hidden;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    width:120px;
+    height:auto;
+}
+
+/* =========================
+   HIDE CLASS
+========================= */
+
+.hidden{
+    display:none !important;
+}
+
+/* =========================
+   PAGE 1 - WELCOME PAGE
+========================= */
+
+.welcome-page{
+    min-height:100vh;
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+    ),
+    url('family-bg.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.top-header{
+    padding:20px 40px;
+}
+
+.welcome-overlay{
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:20px;
+}
+
+.welcome-content{
+    max-width:800px;
+    animation:fadeIn 1.2s ease;
+}
+
+.welcome-content h1{
+    color:#ffd700;
+    font-size:3rem;
+    margin-bottom:20px;
+    text-shadow:2px 2px 10px #000;
+}
+
+.welcome-content p{
+    color:#fff;
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.start-btn{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #ffd700,
+        #ffb700
+    );
+
+    color:#000;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.start-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(255,215,0,.5);
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+.calculator-page{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,0.92),
+        rgba(255,255,255,0.92)
+    ),
+    url('gold-bg.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    padding-bottom:60px;
+}
+
+.calculator-header{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    padding:20px 40px;
+
+    background:#fff;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.calculator-header h1{
+    color:#b8860b;
+    font-size:2rem;
+}
+
+.calculator-container{
+
+    width:95%;
+    max-width:1200px;
+
+    margin:30px auto;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.card h2{
+
+    color:#a26a00;
+
+    margin-bottom:20px;
+
+    border-left:5px solid gold;
+
+    padding-left:12px;
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.checkbox-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+}
+
+.checkbox-grid label{
+
+    background:#fff8dc;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+    transition:0.3s;
+}
+
+.checkbox-grid label:hover{
+    background:#ffe58a;
+}
+
+.checkbox-grid input{
+    margin-right:10px;
+}
+
+/* =========================
+   RATE BOX
+========================= */
+
+.rate-box{
+    margin-bottom:15px;
+}
+
+.rate-box label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+/* =========================
+   INPUT GRID
+========================= */
+
+.input-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.input-grid label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#444;
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+
+    border-color:gold;
+
+    box-shadow:0 0 8px rgba(255,215,0,.4);
+}
+
+/* =========================
+   ERROR BOX
+========================= */
+
+.error-box{
+
+    background:#ffdddd;
+
+    color:#c10000;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.calculate-btn{
+
+    background:linear-gradient(
+    135deg,
+    #ffcc00,
+    #ff9900
+    );
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.calculate-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(255,165,0,.4);
+}
+
+.pdf-btn{
+
+    background:linear-gradient(
+    135deg,
+    #007bff,
+    #0046d5
+    );
+
+    color:#fff;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.pdf-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,123,255,.4);
+}
+
+/* =========================
+   RESULT SECTION
+========================= */
+
+.result-section{
+
+    margin-top:30px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.result-section h2{
+
+    text-align:center;
+
+    color:#a26a00;
+
+    margin-bottom:25px;
+}
+
+#calculationBreakdown{
+
+    line-height:2;
+
+    color:#333;
+}
+
+#verificationResult{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    background:#f8f8f8;
+
+    font-weight:600;
+}
+
+/* =========================
+   RESULT TABLE STYLE
+========================= */
+
+.result-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px;
+
+    border-bottom:1px solid #eee;
+}
+
+.result-row span:first-child{
+    font-weight:600;
+}
+
+.result-row span:last-child{
+    color:#006400;
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+.match{
+    color:green;
+}
+
+.minor{
+    color:orange;
+}
+
+.significant{
+    color:red;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .logo{
+        width:80px;
+    }
+
+    .welcome-content h1{
+        font-size:2rem;
+    }
+
+    .welcome-content p{
+        font-size:1rem;
+    }
+
+    .calculator-header{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .calculator-header h1{
+        font-size:1.4rem;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+
+    .calculate-btn,
+    .pdf-btn{
+        width:100%;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(min-width:769px)
+and (max-width:1024px){
+
+    .calculator-container{
+        width:95%;
+    }
+}
